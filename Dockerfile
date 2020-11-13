@@ -5,8 +5,8 @@ LABEL "com.github.actions.description"="This action will handle the building and
 LABEL "com.github.actions.icon"="git-commit"
 LABEL "com.github.actions.color"="orange"
 
-LABEL "repository"="https://github.com/Metal-Eagle/gh-pages-github-action"
-LABEL "homepage"="https://github.com/Metal-Eagle/gh-pages-gh-action"
+LABEL "repository"="https://github.com/Metal-Eagle/github-pages-deploy-action"
+LABEL "homepage"="https://github.com/Metal-Eagle/github-pages-deploy-action"
 LABEL "maintainer"="Metal-Eagle"
 
 # hadolint ignore=DL3018

@@ -26,6 +26,7 @@ jobs:
       uses: Metal-Eagle/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        REPO: username.github.io
         BRANCH: main #The remove branch to push to
         BUILD_DIR: dist # The folder, the action should deploy.
         BUILD_SCRIPT: npm install && npm run-script build # The build script the action should run prior to deploying.
@@ -54,8 +55,11 @@ Below you'll find a description of what each option does.
 | -------------- | ------------------------------------------------------------ | --------- | -------- |
 | `ACCESS_TOKEN` | Depending on the repository permissions you may need to provide the action with a GitHub personal access token instead of the provided GitHub token in order to deploy. You can [learn more about how to generate one here](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line). **This should be stored as a secret**. | `secrets` | **No**   |
 | `BRANCH`       | This is the branch you wish to deploy to, for example `gh-pages`,`docs` or `main`. | `env`     | **Yes**  |
-| `FOLDER`       | The folder in your repository that you want to deploy. If your build script compiles into a directory named `build` you'd put it here. **Folder paths cannot have a leading `/` or `./`**. | `env`     | **Yes**  |
+| `BUILD_DIR`       | The folder in your repository that you want to deploy. If your build script compiles into a directory named `build` you'd put it here. **Folder paths cannot have a leading `/` or `./`**. | `env`     | **Yes**  |
 | `BUILD_SCRIPT` | If you require a build script to compile your code prior to pushing it you can add the script here. The Docker container which powers the action runs Node which means `npm` commands are valid. If you're using a static site generator such as Jekyll I'd suggest compiling the code prior to pushing it to your base branch. | `env`     | **No**   |
+| `REPO` | Specify here the repository where the BUILD_DIR file should be put | `env`     | **No**   |
+
+
 
 With the action correctly configured you should see the workflow trigger the deployment under the configured conditions.
 

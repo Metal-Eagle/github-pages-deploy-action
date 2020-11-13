@@ -15,11 +15,19 @@ then
   exit 1
 fi
 
+
 if [ -z "$BUILD_DIR" ]
 then
   echo "You must provide the action with the folder name in the repository where your compiled page lives."
   exit 1
 fi
+
+if [ -z "$REPO" ]
+then
+  echo "You must provide a repository here, for example $GITHUB_ACTOR.github.io.git "
+  exit 1
+fi
+
 
 case "$BUILD_DIR" in /*|./*)
   echo "The deployment folder cannot be prefixed with '/' or './'. Instead reference the folder name directly."
@@ -37,7 +45,7 @@ cd $BUILD_DIR
 
 echo "#################################################"
 echo "Now deploying to GitHub Pages..."
-REMOTE_REPO="https://${ACCESS_TOKEN}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" && \
+REMOTE_REPO="https://${ACCESS_TOKEN}@github.com/${GITHUB_ACTOR}/${REPO}" && \
 git init && \
 git config user.name "${GITHUB_ACTOR}" && \
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" && \
@@ -47,7 +55,7 @@ if [ -z "$(git status --porcelain)" ]; then
 fi && \
 git add . && \
 
-git commit -m "Deploy form $GITHUB_REPOSITORY :rocket:" && \
+git commit -m "Deployed form $GITHUB_REPOSITORY :rocket:" && \
 git push --force $REMOTE_REPO master:$BRANCH && \
 rm -fr .git && \
 cd $GITHUB_WORKSPACE && \

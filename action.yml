@@ -1,5 +1,5 @@
-name: 'Vuepress to GitHub Pages'
-description: 'This action will handle the building and deploying process Vuepress to GitHub Pages.'
+name: 'Vue to GitHub Pages'
+description: 'This action will handle the building and deploying process Vue to GitHub Pages.'
 author: 'Metal-Eagle'
 runs:
   using: 'docker'

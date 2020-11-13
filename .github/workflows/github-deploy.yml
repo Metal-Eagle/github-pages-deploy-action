@@ -9,6 +9,7 @@ jobs:
       - uses: Metal-Eagle/github-pages-deploy-action@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          #BRANCH: gh-pages
+          BRANCH: main
+          REPO: 
           BUILD_DIR: "test/build/"
           BUILD_SCRIPT: npm run-script integrationTest
