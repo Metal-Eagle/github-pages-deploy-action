@@ -1,4 +1,4 @@
-# GitHub Pages Deploy Action :rocket:
+# GitHub Pages Deploy Action to User page "username.github.io" :rocket:
 
 This [GitHub action](https://github.com/features/actions) will handle the building and deploy process of your project to [GitHub Pages](https://pages.github.com/).
 
@@ -30,7 +30,7 @@ jobs:
       uses: Metal-Eagle/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BUILD_DIR: test/build/ # The folder, the action should deploy.
+        BUILD_DIR: dist # The folder, the action should deploy.
         BUILD_SCRIPT: npm install && npm run-script build # The build script the action should run prior to deploying.
 ```
 
@@ -78,3 +78,6 @@ Be it filing bugs, formulating enhancements, creating pull requests, or any othe
 
 - [ghpages](https://github.com/maxheld83/ghpages)
 - [github-pages-deploy-action](https://github.com/grasilife/github-pages-deploy-action)
+- [github-pages-deploy-action](https://github.com/testthedocs/github-pages-deploy-action)
+
+
