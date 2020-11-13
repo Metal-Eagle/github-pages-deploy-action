@@ -16,10 +16,7 @@ REMOTE_REPO="https://${ACCESS_TOKEN}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.
 REPONAME="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 2)" && \
 OWNER="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 1)" && \
 GHIO="${OWNER}.github.io" && \
-if [[ "$REPONAME" == "$GHIO" ]]; then
-  REMOTE_BRANCH="master"
-else
-  REMOTE_BRANCH="gh-pages"
+REMOTE_BRANCH="master"
 fi && \
 git init && \
 git config user.name "${GITHUB_ACTOR}" && \
