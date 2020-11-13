@@ -13,6 +13,7 @@ cd $BUILD_DIR
 echo "#################################################"
 echo "Now deploying to GitHub Pages..."
 REMOTE_REPO="https://${ACCESS_TOKEN}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" && \
+REPONAME="main"  && \
 git init && \
 git config user.name "${GITHUB_ACTOR}" && \
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" && \
@@ -22,7 +23,7 @@ if [ -z "$(git status --porcelain)" ]; then
 fi && \
 git add . && \
 git commit -m 'Deploy to GitHub Pages your github page' && \
-git push --force $REMOTE_REPO master:master && \
+git push --force $REMOTE_REPO master:$REPONAME && \
 rm -fr .git && \
 cd $GITHUB_WORKSPACE && \
 echo "Content of $BUILD_DIR has been deployed to your $REMOTE_REPO"
