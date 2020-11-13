@@ -21,8 +21,8 @@ if [ -z "$(git status --porcelain)" ]; then
     exit 0
 fi && \
 git add . && \
-git commit -m 'Deploy to GitHub Pages' && \
+git commit -m 'Deploy to GitHub Pages your github page' && \
 git push --force $REMOTE_REPO master:master && \
 rm -fr .git && \
 cd $GITHUB_WORKSPACE && \
-echo "Content of $BUILD_DIR has been deployed to GitHub Pages."
+echo "Content of $BUILD_DIR has been deployed to your $REMOTE_REPO"
