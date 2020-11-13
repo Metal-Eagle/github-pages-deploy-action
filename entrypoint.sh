@@ -13,10 +13,8 @@ cd $BUILD_DIR
 echo "#################################################"
 echo "Now deploying to GitHub Pages..."
 REMOTE_REPO="https://${ACCESS_TOKEN}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" && \
-REPONAME="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 2)" && \
-OWNER="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 1)" && \
-GHIO="${OWNER}.github.io" && \
 REMOTE_BRANCH="master"
+
 fi && \
 git init && \
 git config user.name "${GITHUB_ACTOR}" && \
