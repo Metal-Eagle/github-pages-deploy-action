@@ -1,4 +1,4 @@
-# Deploy to your user of organization site (Github Pages) :rocket:
+# Deploy to your user or organization site (Github Pages) :rocket:
 
 This [GitHub action](https://github.com/features/actions) will handle the building and deploy process of your project to [GitHub Pages](https://pages.github.com/).
 
