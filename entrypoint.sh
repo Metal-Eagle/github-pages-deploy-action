@@ -13,8 +13,6 @@ cd $BUILD_DIR
 echo "#################################################"
 echo "Now deploying to GitHub Pages..."
 REMOTE_REPO="https://${ACCESS_TOKEN}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" && \
-
-fi && \
 git init && \
 git config user.name "${GITHUB_ACTOR}" && \
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" && \
